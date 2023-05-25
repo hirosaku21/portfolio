@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>佐々木のポートフォリオ</title>
+  <!-- ※一般公開はしないため、metaタグ・OGPの設定はしない -->
+  <meta name="robots" content="noindex,nofollow">
+
+  <!-- favicon -->
+  <link rel="shortcut icon" href="favicon.ico">
+  <link rel="apple-touch-icon" href="apple-touch-icon-180x180.png">
+  <link rel="icon" type="image/png" href="icon-192x192.png">
+
+  <!-- css -->
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- icon -->
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
+
+  <!-- fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <!-- 源ノ角ゴシック、Myriad Proの読み込み -->
+  <script>
+    (function (d) {
+      var config = {
+        kitId: 'nqa3yjc',
+        scriptTimeout: 3000,
+        async: true
+      },
+        h = d.documentElement, t = setTimeout(function () { h.className = h.className.replace(/\bwf-loading\b/g, "") + " wf-inactive"; }, config.scriptTimeout), tk = d.createElement("script"), f = false, s = d.getElementsByTagName("script")[0], a; h.className += " wf-loading"; tk.src = 'https://use.typekit.net/' + config.kitId + '.js'; tk.async = true; tk.onload = tk.onreadystatechange = function () { a = this.readyState; if (f || a && a != "complete" && a != "loaded") return; f = true; clearTimeout(t); try { Typekit.load(config) } catch (e) { } }; s.parentNode.insertBefore(tk, s)
+    })(document);
+  </script>
+</head>
+
+<body>
+  <!-- header -->
+  <header class="header js-header">
+    <div class="header__inner container">
+      <div class="header__logo">
+        <a href="index.html"><img src="img/logo.png" alt="ロゴ" width="168" height="44"></a>
+      </div>
+      <div class="header__nav ">
+        <nav class="gnav js-gnav">
+          <ul class="gnav__list">
+            <li class="gnav__item"><a href="#works">制作実績</a></li>
+            <li class="gnav__item"><a href="#skills">保有スキル</a></li>
+            <li class="gnav__item"><a href="#features">3つの特徴</a></li>
+            <li class="gnav__item"><a href="#faq">よくある質問</a></li>
+          </ul>
+        </nav>
+        <a class="btn btn--header" href="mailto:hiroyuki_scorpio3@hotmail.co.jp">面談の連絡はこちら<span
+            class="material-symbols-rounded">chevron_right</span></a>
+      </div>
+      <button type="button" class="hamburger js-hamburger"></button>
+    </div>
+  </header>
+
+  <!-- mv -->
+  <section class="mv">
+    <div class="mv__inner container">
+      <h1 class="mv__heading">
+        <span class="mv__copy js-copy">
+          <span class="mv__copy__text js-copy-text">成長の「加速度」に、</span>
+        </span><br><br>
+        <span class="mv__copy js-copy">
+          <span class="mv__copy__text js-copy-text">ご期待ください。</span>
+        </span>
+      </h1>
+      <div class="mv__img">
+        <img src="img/mv_tab.png" alt="モックアップイメージ" width="250" height="230">
+        <img src="img/mv_sp.png" alt="モックアップイメージ" width="150" height="250">
+        <img src="img/mv_pc.png" alt="モックアップイメージ" width="400" height="403">
+      </div>
+    </div>
+    <div class="mv__icon-wrapper">
+      <ul class="mv__icon-list mv__icon-list--1">
+        <li class="mv__icon-item"><img src="img/icon_01.png" alt="HTML" width="100" height="100"></li>
+        <li class="mv__icon-item"><img src="img/icon_02.png" alt="css" width="100" height="100"></li>
+        <li class="mv__icon-item"><img src="img/icon_03.png" alt="Sass" width="100" height="100"></li>
+        <li class="mv__icon-item"><img src="img/icon_04.png" alt="JavaScript" width="100" height="100"></li>
+        <li class="mv__icon-item"><img src="img/icon_05.png" alt="jQuery" width="100" height="100"></li>
+        <li class="mv__icon-item"><img src="img/icon_06.png" alt="PHP" width="100" height="100"></li>
+        <li class="mv__icon-item"><img src="img/icon_07.png" alt="MySql" width="100" height="100"></li>
+        <li class="mv__icon-item"><img src="img/icon_08.png" alt="WordPress" width="100" height="100"></li>
+        <li class="mv__icon-item"><img src="img/icon_09.png" alt="Photoshop" width="100" height="100"></li>
+        <li class="mv__icon-item"><img src="img/icon_10.png" alt="Illustrator" width="100" height="100"></li>
+        <li class="mv__icon-item"><img src="img/icon_11.png" alt="Xd" width="100" height="100"></li>
+        <li class="mv__icon-item"><img src="img/icon_12.png" alt="DreamWeaver" width="100" height="100"></li>
+        <li class="mv__icon-item"><img src="img/icon_13.png" alt="Figma" width="100" height="100"></li>
+        <li class="mv__icon-item"><img src="img/icon_14.png" alt="VSCode" width="100" height="100"></li>
+        <li class="mv__icon-item"><img src="img/icon_15.png" alt="SEO" width="100" height="100"></li>
+      </ul>
+      <ul class="mv__icon-list mv__icon-list--2">
+        <li class="mv__icon-item"><img src="img/icon_01.png" alt="HTML" width="100" height="100"></li>
+        <li class="mv__icon-item"><img src="img/icon_02.png" alt="css" width="100" height="100"></li>
+        <li class="mv__icon-item"><img src="img/icon_03.png" alt="Sass" width="100" height="100"></li>
+        <li class="mv__icon-item"><img src="img/icon_04.png" alt="JavaScript" width="100" height="100"></li>
+        <li class="mv__icon-item"><img src="img/icon_05.png" alt="jQuery" width="100" height="100"></li>
+        <li class="mv__icon-item"><img src="img/icon_06.png" alt="PHP" width="100" height="100"></li>
+        <li class="mv__icon-item"><img src="img/icon_07.png" alt="MySql" width="100" height="100"></li>
+        <li class="mv__icon-item"><img src="img/icon_08.png" alt="WordPress" width="100" height="100"></li>
+        <li class="mv__icon-item"><img src="img/icon_09.png" alt="Photoshop" width="100" height="100"></li>
+        <li class="mv__icon-item"><img src="img/icon_10.png" alt="Illustrator" width="100" height="100"></li>
+        <li class="mv__icon-item"><img src="img/icon_11.png" alt="Xd" width="100" height="100"></li>
+        <li class="mv__icon-item"><img src="img/icon_12.png" alt="DreamWeaver" width="100" height="100"></li>
+        <li class="mv__icon-item"><img src="img/icon_13.png" alt="Figma" width="100" height="100"></li>
+        <li class="mv__icon-item"><img src="img/icon_14.png" alt="VSCode" width="100" height="100"></li>
+        <li class="mv__icon-item"><img src="img/icon_15.png" alt="SEO" width="100" height="100"></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- intro -->
+  <section class="intro">
+    <div class="intro__inner">
+      <h2 class="intro__heading">こんな課題はありませんか？</h2>
+      <div class="intro__img">
+        <picture>
+          <source srcset="img/intro_bg_sp.jpg" media="(max-width:500px)" type="image/png">
+          <img src="img/intro_bg.jpg" alt="" loading="lazy" decoding="async" width="1920" height="587">
+        </picture>
+        <div class="intro__img__person">
+          <img src="img/intro_img.png" alt="" loading="lazy" decoding="async" width="1069" height="802">
+        </div>
+      </div>
+    </div>
+    <div class="intro__text-area">
+      <div class="intro__text-area__inner container">
+        <p class="intro__text-area__text"><span
+            class="intro__text-area__decoration">少しだけ<br>お時間ください!!</span>実務は未経験ですが、<br
+            class="sp-only"><span>社会人としての&quot;自走力&quot;は一人前。<br><br class="sp-only"></span>佐久間のポテンシャルをご覧ください！
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- works -->
+  <section class="section works" id="works">
+    <div class="works__inner container">
+      <div class="section__heading-wrapper">
+        <h2 class="section__heading"><span>制作実績</span><span>Works</span></h2>
+      </div>
+      <p class="section__top-text">
+        2022年12月にWeb制作の学習を開始し、2023年2月から掲載している作品の制作に着手しました。<br><br>Webサイトについては、<span
+          class="text-orange">デザインに至るまでの思考や工夫した点などを記載しております。</span><br class="pc-only">是非サムネイルをクリックし、詳細をご確認ください。
+      </p>
+      <div class="tab">
+        <div class="tab__switch">
+          <button type="button" class="tab__heading js-tab-heading active">Webサイト</button>
+          <button type="button" class="tab__heading js-tab-heading ">バナー・チラシ</button>
+        </div>
+        <div class="tab__content-area">
+          <ul class="tab__list js-tab-list show fadeUpEffect js-fadeUpEffect">
+            <li class="tab__item"><a href="works/nagasakitei.html">
+                <div class="btn btn--works">詳細情報へ<span class="material-symbols-rounded">chevron_right</span></div>
+                <div class="tab__item__img"><img src="img/works_01.jpg" alt="長崎亭" loading="lazy" decoding="async"
+                    width="650" height="408">
+                  <div class="tab__item__img__hover">
+                    <span>2023.3</span><span>長崎亭</span>
+                  </div>
+                </div>
+                <h3 class="tab__item__heading">デザイン/コーディング</h3>
+                <p class="tab__item__text">架空の旅館HP。渋い和の雰囲気を出しつつ、デザインや動きにバラエティを持たせました。</p>
+              </a></li>
+            <li class="tab__item"><a href="works/university.html">
+                <div class="btn btn--works">詳細情報へ<span class="material-symbols-rounded">chevron_right</span></div>
+                <div class="tab__item__img"><img src="img/works_02.jpg" alt="日本ネクスト大学" loading="lazy" decoding="async"
+                    width="650" height="408">
+                  <div class="tab__item__img__hover">
+                    <span>2023.2</span><span>日本ネクスト大学</span>
+                  </div>
+                </div>
+                <h3 class="tab__item__heading">デザイン/コーディング</h3>
+                <p class="tab__item__text">架空の大学HP。少子高齢化に苦しむ地方大学の設定に対する、課題解決を意識しました。</p>
+              </a></li>
+            <li class="tab__item"><a href="works/portfolio.html">
+                <div class="btn btn--works">詳細情報へ<span class="material-symbols-rounded">chevron_right</span></div>
+                <div class="tab__item__img"><img src="img/works_03.jpg" alt="ポートフォリオサイト" loading="lazy" decoding="async"
+                    width="650" height="408">
+                  <div class="tab__item__img__hover">
+                    <span>2023.5</span><span>ポートフォリオ</span>
+                  </div>
+                </div>
+                <h3 class="tab__item__heading">デザイン/コーディング</h3>
+                <p class="tab__item__text">当ポートフォリオサイト。面談に進むことをCVと捉え、LP風の形式を採用しました。</p>
+              </a></li>
+            <li class="tab__item"><a href="works/naturel.html">
+                <div class="btn btn--works">詳細情報へ<span class="material-symbols-rounded">chevron_right</span></div>
+                <div class="tab__item__img"><img src="img/works_04.jpg" alt="naturel" loading="lazy" decoding="async"
+                    width="650" height="408">
+                  <div class="tab__item__img__hover">
+                    <span>2023.4</span><span>naturel</span>
+                  </div>
+                </div>
+                <h3 class="tab__item__heading">プログラミング</h3>
+                <p class="tab__item__text">職業訓練校の卒業課題。分業制で制作を実施し、主にPHPとAjaxの実装を担当しました。</p>
+              </a></li>
+            <li class="tab__item"><a href="works/coffee-mania.html">
+                <div class="btn btn--works">詳細情報へ<span class="material-symbols-rounded">chevron_right</span></div>
+                <div class="tab__item__img"><img src="img/works_05.jpg" alt="Coffee Mania" loading="lazy"
+                    decoding="async" width="650" height="408">
+                  <div class="tab__item__img__hover">
+                    <span>2023.4</span><span>Coffee Mania</span>
+                  </div>
+                </div>
+                <h3 class="tab__item__heading">WordPress組み込み</h3>
+                <p class="tab__item__text">職職業訓練校の課題。用意されたHTML/CSSを基に、オリジナルテーマの作成を行いました。</p>
+              </a></li>
+          </ul>
+          <ul class="tab__list js-tab-list js-tab-list2">
+            <li class="tab__item tab__item--opacity js-magnify">
+              <div class="btn btn--works">拡大する<span class="material-symbols-rounded">chevron_right</span></div>
+              <div class="tab__item__img tab__item__img--banner">
+                <img src="img/works_06.jpg" alt="北海道物産展の告知バナー" loading="lazy" decoding="async" width="200" height="200">
+              </div>
+              <h3 class="tab__item__heading">北海道物産展のバナー</h3>
+              <p class="tab__item__text">年齢層を高めにターゲット設定し、落ち着きのある色や日本語フォントを選択しました。</p>
+            </li>
+            <li class="tab__item tab__item--opacity js-magnify">
+              <div class="btn btn--works">拡大する<span class="material-symbols-rounded">chevron_right</span></div>
+              <div class="tab__item__img tab__item__img--banner">
+                <img src="img/works_07.jpg" alt="通信キャリアのバナー" loading="lazy" decoding="async" width="240" height="200">
+              </div>
+              <h3 class="tab__item__heading">通信キャリアのバナー</h3>
+              <p class="tab__item__text">「5,000円」のコントラストと、キャンペーン感のある配色や装飾を意識しました。</p>
+            </li>
+            <li class="tab__item tab__item--opacity js-magnify">
+              <div class="btn btn--works">拡大する<span class="material-symbols-rounded">chevron_right</span></div>
+              <div class="tab__item__img tab__item__img--banner">
+                <img src="img/works_08.jpg" alt="転職エージェントのバナー" loading="lazy" decoding="async" width="250" height="200">
+              </div>
+              <h3 class="tab__item__heading">転職広告のバナー</h3>
+              <p class="tab__item__text">ターゲットの若い女性が親しみを持てる配色と、画像の選定や言葉の選択をしました。</p>
+            </li>
+            <li class="tab__item tab__item--opacity js-magnify">
+              <div class="btn btn--works">拡大する<span class="material-symbols-rounded">chevron_right</span></div>
+              <img src="img/works_09.jpg" alt="モデルハウスのチラシ" loading="lazy" decoding="async" width="650" height="922">
+              <h3 class="tab__item__heading">モデルハウスのチラシ</h3>
+              <p class="tab__item__text">「ゆったりできる家」というコンセプトで作成。スタッフ写真を配置し、信頼感を醸成。</p>
+            </li>
+            <li class="tab__item tab__item--opacity js-magnify">
+              <div class="btn btn--works">拡大する<span class="material-symbols-rounded">chevron_right</span></div>
+              <img src="img/works_10.jpg" alt="映画宣伝の風チラシ" loading="lazy" decoding="async" width="650" height="920">
+              <h3 class="tab__item__heading">映画宣伝風のチラシ</h3>
+              <p class="tab__item__text">Photoshopの初制作。福岡では無名なラーメン二郎への愛が溢れて作成してしまった。</p>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- modal -->
+  <div class="modal js-modal">
+    <div class="modal__inner js-modal-inner">
+      <div class="modal__img js-modal-img">
+        <img src="" alt="">
+        <div class="modal__close js-modal-close"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- process -->
+  <section class="section process" id="process">
+    <div class="process__inner container">
+      <div class="section__heading-wrapper">
+        <h2 class="section__heading"><span>制作の流れ</span><span>Process</span></h2>
+      </div>
+      <p class="section__top-text">Webサイト制作の過程で意識していることを記述しています。<br><br class="tab-sp-only">
+        グラフィック作品の制作においても「調査や設計」は、同様のことを考えながら制作を行っています。</p>
+      <div class="process__anchor">
+        <ul class="process__anchor__list">
+          <li class="process__anchor__item js-anchor-item1 active">STEP01<br><span>調査</span></li>
+          <li class="process__anchor__item js-anchor-item2">STEP02<br><span>設計</span></li>
+          <li class="process__anchor__item js-anchor-item3">STEP03<br><span>作業</span></li>
+          <li class="process__anchor__item js-anchor-item4">STEP04<br><span>検収</span></li>
+        </ul>
+      </div>
+      <div class="process__slide">
+        <div class="process__slide__wrapper js-gsap-wrapper">
+          <ul class="process__slide__list js-gsap-list">
+            <li class="process__slide__item js-gsap-item" id="js-gsap-item1">
+              <img src="img/process_01.jpg" alt="制作の流れのスライド" loading="lazy" decoding="async" width="700" height="350">
+            </li>
+            <li class="process__slide__item js-gsap-item" id="js-gsap-item2">
+              <img src="img/process_02.jpg" alt="制作の流れのスライド" loading="lazy" decoding="async" width="700" height="350">
+            </li>
+            <li class="process__slide__item js-gsap-item" id="js-gsap-item3">
+              <img src="img/process_03.jpg" alt="制作の流れのスライド" loading="lazy" decoding="async" width="700" height="350">
+            </li>
+            <li class="process__slide__item js-gsap-item" id="js-gsap-item4">
+              <img src="img/process_04.jpg" alt="制作の流れのスライド" loading="lazy" decoding="async" width="700" height="350">
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="process__img">
+        <img src="img/process_img.png" alt="" loading="lazy" decoding="async" width="130" height="197">
+      </div>
+    </div>
+  </section>
+
+  <!-- cta -->
+  <div class="cta">
+    <div class="cta__inner container">
+      <div class="cta__text-wrapper">
+        <div class="cta__text"><span>24時間以内に返信します</span></div>
+        <a class="btn btn--cta" href="mailto:hiroyuki_scorpio3@hotmail.co.jp">面談の連絡はこちら<span
+            class="material-symbols-rounded">chevron_right</span></a>
+      </div>
+      <div class="cta__img">
+        <img src="img/cta_img.png" alt="" loading="lazy" decoding="async" width="250" height="188">
+      </div>
+    </div>
+  </div>
+
+  <!-- skills -->
+  <section class="section skills" id="skills">
+    <div class="skills__inner container">
+      <div class="section__heading-wrapper">
+        <h2 class="section__heading"><span>保有スキル</span><span>Skills</span></h2>
+      </div>
+      <p class="section__top-text">職業訓練校でのカリキュラムとは別に、Udemyや書籍などを用いて学習しております。<br><br class="tab-sp-only">また、<span
+          class="text-orange">実践的なスキルを身に付けるためにはプロ目線のフィードバックが重要</span>と考え、メンターサービスも活用しました。</p>
+      <ul class="skills__list">
+        <li class="skills__item skills__item--coding fadeUpEffect js-fadeUpEffect">
+          <div class="skills__box">
+            <h3 class="skills__heading">コーディング（HTML/CSS）</h3>
+            <p class="skills__text">セマンティックなHTMLと<span
+                class="text-purple">「予測しやすい」「再利用しやすい」「保守しやすい」「拡張しやすい」CSS設計を意識</span>しています。設計手法としては、BEMを主に使っています。また、CSSのコーディングにはSCSSを用いて、mixinや変数管理等で効率化を図っています。
+            </p>
+            <div class="skills__tool">Visual&nbsp;Studio&nbsp;Code&nbsp;/&nbsp;DreamWeaver</div>
+          </div>
+        </li>
+        <li class="skills__item skills__item--reverse skills__item--design fadeUpEffect js-fadeUpEffect">
+          <div class="skills__box">
+            <h3 class="skills__heading">デザイン</h3>
+            <p class="skills__text">
+              設定した目的や世界観を表現するデザインを心掛けています。また、ユーザーに不要な違和感を与えないように、デザインの4原則も意識します。さらに、SEOライティングの経験から、効果的なデザインの重要要素である”言葉”に関しても検証を重ねています。
+            </p>
+            <div class="skills__tool">Illustrator&nbsp;/&nbsp;Photoshop&nbsp;/&nbsp;XD&nbsp;/&nbsp;Figma</div>
+          </div>
+        </li>
+        <li class="skills__item skills__item--programming fadeUpEffect js-fadeUpEffect">
+          <div class="skills__box">
+            <h3 class="skills__heading">プログラミング</h3>
+            <p class="skills__text">
+              主にjQueryとプラグインをカスタマイズして、基本的なアニメーションを実装可能です。また、PHPとDBを用いて、カート機能/お問い合わせ/管理画面などを開発できます。<span
+                class="text-purple">WordPressについては、オリジナルテーマの作成経験があります。</span>
+            </p>
+            <div class="skills__tool">JavaScript（jQuery）/&nbsp;PHP&nbsp;/&nbsp;WordPress</div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- features -->
+  <section class="section features" id="features">
+    <div class="features__inner container">
+      <div class="features__wrapper">
+        <div class="section__heading-wrapper">
+          <h2 class="section__heading"><span>３つの特徴</span><span>Features</span></h2>
+        </div>
+        <ul class="features__list">
+          <li class="features__item fadeUpEffect js-fadeUpEffect">
+            <img src="img/features_01.jpg" alt="思考力" loading="lazy" decoding="async" width="98" height="124">
+            <h3 class="features__item__heading">思考力<br><span>－クリティカルシンキング－</span></h3>
+            <p class="features__item__text">7年半の営業経験から、ポジショニングや競合分析をする思考力があります。<span
+                class="text-purple">顧客のビジネスを理解し、課題解決に結び付く</span>設計やデザインの提案を行います。</p>
+          </li>
+          <li class="features__item fadeUpEffect js-fadeUpEffect">
+            <img src="img/features_02.jpg" alt="協働力" loading="lazy" decoding="async" width="106" height="124">
+            <h3 class="features__item__heading">協働力<br><span>－円滑なコミュニケーション－</span></h3>
+            <p class="features__item__text">営業や大学職員の経験から「多様な人と協働する力」があります。チームで働くWeb業界において、<span
+                class="text-purple">各関係者の立場を尊重したコミュニケーション</span>を心掛けます。</p>
+          </li>
+          <li class="features__item fadeUpEffect js-fadeUpEffect">
+            <img src="img/features_03.jpg" alt="独学力" loading="lazy" decoding="async" width="141" height="123">
+            <h3 class="features__item__heading">独学力<br><span>－継続的なスキルの積み上げ－</span></h3>
+            <p class="features__item__text">不足しているスキルを見極め、学習を継続してきました。書籍での知識強化やSNS/キュレーションメディアでのトレンド探知、勉強会参加などを行っています。
+            </p>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- faq -->
+  <section class="section faq" id="faq">
+    <div class="faq__inner">
+      <div class="section__heading-wrapper">
+        <h2 class="section__heading"><span>よくある質問</span><span>Questions</span></h2>
+      </div>
+      <div class="accordion-wrapper">
+        <dl class="accordion">
+          <div class="accordion__item">
+            <dt class="accordion__question js-accordion active">
+              <div class="accordion__question__inner">
+                <span>Q.</span>
+                <p class="accordion__question__text">Web制作のどの分野が好きですか？</p>
+              </div>
+              <span></span>
+            </dt>
+            <dd class="accordion__answer">
+              <div class="accordion__answer__inner">
+                <span>A.</span>
+                <p class="accordion__answer__text">
+                  サイトの目的達成に繋がるコーディングとデザインの「設計」を組み立てるプロセスに最も興味があります。また、フロントエンド領域の学習も継続していきたいです。</p>
+              </div>
+            </dd>
+          </div>
+          <div class="accordion__item">
+            <dt class="accordion__question js-accordion active">
+              <div class="accordion__question__inner">
+                <span>Q.</span>
+                <p class="accordion__question__text">どのようなキャリアを考えていますか？</p>
+              </div>
+              <span></span>
+            </dt>
+            <dd class="accordion__answer">
+              <div class="accordion__answer__inner">
+                <span>A.</span>
+                <p class="accordion__answer__text">
+                  現場のことを理解した上で、将来的にはPMをしたいです。そのために、コーディング/デザイン/フロントエンドのスキル習得に加えて、チームでの制作ノウハウを身に付けたいです。</p>
+              </div>
+            </dd>
+          </div>
+          <div class="accordion__item">
+            <dt class="accordion__question js-accordion">
+              <div class="accordion__question__inner">
+                <span>Q.</span>
+                <p class="accordion__question__text">休日はどのように過ごしていますか？</p>
+              </div>
+              <span></span>
+            </dt>
+            <dd class="accordion__answer">
+              <div class="accordion__answer__inner">
+                <span>A.</span>
+                <p class="accordion__answer__text">
+                  一人の時間は、筋肉を育てることに勤しんでおります。成長を実感できるように、持ち上げたダンベルの重さや回数を記録する癖があります。直近の目標は、腹直筋にdisplay:gridを取り戻し、三角筋をtransform:scale()させることです。
+                </p>
+              </div>
+            </dd>
+          </div>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <!-- cta -->
+  <div class="cta">
+    <div class="cta__inner container">
+      <div class="cta__text-wrapper">
+        <div class="cta__text"><span>24時間以内に返信します</span></div>
+        <a class="btn btn--cta" href="mailto:hiroyuki_scorpio3@hotmail.co.jp">面談の連絡はこちら<span
+            class="material-symbols-rounded">chevron_right</span></a>
+      </div>
+      <div class="cta__img">
+        <img src="img/cta_img.png" alt="" loading="lazy" decoding="async" width="250" height="188">
+      </div>
+      <div class="cta__faq-img">
+        <img src="img/faq_img.png" alt="" loading="lazy" decoding="async" width="170" height="185">
+      </div>
+    </div>
+  </div>
+
+  <!-- footer -->
+  <footer class="footer">
+    <p class="footer__copy"><small>&copy;2023 sakuma Copyright</small></p>
+  </footer>
+
+  <!-- ad -->
+  <div class="ad js-ad">
+    <div class="ad__inner">
+      <div class="ad__close js-ad-close"></div>
+      <div class="ad__box js-ad-box">
+        <a href="works/nagasakitei.html">
+          <img src="img/ad.jpg" alt="広告バナー" loading="lazy" decoding="async" width="280" height="174">
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- script -->
+  <script src=" script/jquery-3.6.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"
+    integrity="sha512-cOH8ndwGgPo+K7pTvMrqYbmI8u8k6Sho3js0gOqVWTmQMlLIi6TbqGWRTpf1ga8ci9H3iPsvDLr4X7xwhC/+DQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"
+    integrity="sha512-AMl4wfwAmDM1lsQvVBBRHYENn1FR8cfOTpt8QVbb/P55mYOdahHD4LmHM1W55pNe3j/3od8ELzPf/8eNkkjISQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" defer></script>
+  <script src="script/script.js" defer></script>
+  <script src="script/gsap.js" defer></script>
+</body>

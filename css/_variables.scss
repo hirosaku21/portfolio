@@ -1,0 +1,57 @@
+@use "sass:math";
+
+$purple: #6067ad;
+$purpleLight: #ccd1ff;
+$purpleLighter: #f2f4ff;
+$purpleHeading: rgba(204, 209, 255, 0.6);
+$blue: #c5e7fa;
+$blueLight: #f2faff;
+$yellow: #ffd683;
+$white: #fff;
+$black: #222;
+$gray: #f2f2f2;
+$orange: #ff7150;
+$gradient: linear-gradient(
+  135deg,
+  rgba(197, 231, 250, 0.7) 0%,
+  rgba(204, 209, 255, 0.7) 100%
+);
+$shadow: 3px 3px 10px rgba(96, 103, 173, 0.3);
+$shadowFourCorners: 0 0 10px rgba(96, 103, 173, 0.3);
+$speedAnimation: 0.6s;
+$speedHover: 0.3s;
+$fontsRegular: 400;
+$fontsMedium: 500;
+$fontsBold: 700;
+
+@mixin fz($size: 16) {
+  font-size: calc($size / 10) + rem;
+}
+
+@mixin clamp($fs_min, $width_small, $width_large, $fs_max) {
+  $preferred_vw_base: math.div(
+    ($fs_max - $fs_min),
+    ($width_large - $width_small)
+  );
+  $preferred_vw: ($preferred_vw_base * 100) * 1vw;
+  $preferred_rem: ($width_small * -1 * $preferred_vw_base + $fs_min) * 0.1rem;
+  font-size: clamp(
+    $fs_min * 0.1rem,
+    $preferred_rem + $preferred_vw,
+    $fs_max * 0.1rem
+  );
+}
+
+$breakpoints: (
+  "xsm": "screen and (max-width: 500px)",
+  "sm": "screen and (max-width: 767px)",
+  "md": "screen and (max-width: 960px)",
+  "lg": "screen and (max-width: 1080px)",
+  "xl": "screen and (max-width: 1280px)",
+);
+
+@mixin mq($breakpoint) {
+  @media #{map-get($breakpoints, $breakpoint)} {
+    @content;
+  }
+}

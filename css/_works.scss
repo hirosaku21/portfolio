@@ -1,0 +1,264 @@
+@use "variables" as *;
+
+/*-------------------------
+メインビジュアル
+-------------------------*/
+.works-mv {
+  background-image: url(../img/works-mv_bg.png);
+  background-repeat: no-repeat;
+  background-position: bottom;
+  position: relative;
+  &__inner {
+    height: 100%;
+    max-width: 960px;
+    padding: 0 20px;
+    margin: 0 auto;
+  }
+  &__heading {
+    @include clamp(30, 360, 1920, 56);
+    font-weight: $fontsMedium;
+    padding: 40px 0 60px;
+    text-align: center;
+  }
+  &__comment {
+    line-height: 1.5;
+  }
+  &__btn {
+    display: flex;
+    gap: 30px;
+  }
+}
+
+.btn--works-mv {
+  justify-content: center;
+  width: 200px;
+  padding: 10px 10px 10px 15px;
+  @include fz(20);
+  border-radius: 35px;
+  font-weight: $fontsBold;
+  margin-top: 20px;
+  margin-bottom: 15px;
+  & > span {
+    @include fz(28);
+  }
+  @include mq(xsm) {
+    width: 160px;
+    @include fz(16);
+    padding: 5px 2px 5px 10px;
+  }
+}
+/*-------------------------
+制作にかかわる情報
+-------------------------*/
+.info {
+  &__box {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+    @include mq(md) {
+      grid-template-columns: auto;
+    }
+  }
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    box-shadow: $shadow;
+    padding: 40px 30px;
+    &--left {
+      background-color: $blueLight;
+    }
+    &--right {
+      background-color: $purpleLighter;
+    }
+  }
+  &__heading {
+    font-weight: $fontsMedium;
+    @include fz(18);
+    &::after {
+      content: "";
+      background-color: $orange;
+      width: 50px;
+      height: 1px;
+      display: block;
+      margin-top: 3px;
+      margin-bottom: 10px;
+    }
+  }
+  &__text {
+    line-height: 1.5;
+    @include mq(xsm) {
+      @include fz(14);
+    }
+  }
+  &__bullet__list {
+    list-style: disc;
+    padding-left: 20px;
+  }
+  &__bullet__item {
+    line-height: 1.5;
+    & ~ .info__bullet__item {
+      padding-top: 1rem;
+    }
+    & + .info__text__item {
+      margin-top: 1.2em;
+    }
+    @include mq(xsm) {
+      @include fz(14);
+    }
+  }
+}
+
+#works .section.info {
+  padding-top: 120px;
+  @include mq(xl) {
+    padding-top: 100px;
+  }
+}
+/*-------------------------
+デザインカンプ
+-------------------------*/
+.section.mock-up {
+  padding-top: 160px;
+  @include mq(xl) {
+    padding-top: 140px;
+  }
+  @include mq(md) {
+    padding-top: 120px;
+  }
+  @include mq(sm) {
+    padding-top: 80px;
+  }
+}
+
+.mock-up {
+  overflow: hidden;
+  padding-bottom: 120px;
+  @include mq(md) {
+    padding-bottom: 100px;
+  }
+  &__wrapper {
+    position: relative;
+    background-image: $gradient;
+    transform: skewY(-17deg);
+    background-position: center;
+    background-repeat: no-repeat;
+
+    &--nagasakitei {
+      background-size: 100% 92%;
+      @include mq(xl) {
+        background-size: 100% 95%;
+      }
+      @include mq(md) {
+        background-size: 100% 98.5%;
+      }
+      @include mq(xsm) {
+        background-size: 100% 97.5%;
+      }
+    }
+    &--university {
+      background-size: 100% 83%;
+      @include mq(xl) {
+        background-size: 100% 89%;
+      }
+      @include mq(md) {
+        background-size: 100% 97%;
+      }
+      @include mq(sm) {
+        background-size: 100% 96%;
+      }
+      @include mq(xsm) {
+        background-size: 100% 95%;
+      }
+    }
+    &--portfolio {
+      background-size: 100% 83%;
+      @include mq(xl) {
+        background-size: 100% 89%;
+      }
+      @include mq(md) {
+        background-size: 100% 96%;
+      }
+      @include mq(xsm) {
+        background-size: 100% 94%;
+      }
+    }
+    &--naturel {
+      background-size: 100% 86%;
+      @include mq(xl) {
+        background-size: 100% 89%;
+      }
+      @include mq(md) {
+        background-size: 100% 97%;
+      }
+      @include mq(sm) {
+        background-size: 100% 96%;
+      }
+      @include mq(xsm) {
+        background-size: 100% 95%;
+      }
+    }
+    &--coffee-mania {
+      background-size: 100% 65%;
+      @include mq(xl) {
+        background-size: 100% 75%;
+      }
+      @include mq(md) {
+        background-size: 100% 92%;
+      }
+      @include mq(xsm) {
+        background-size: 100% 88%;
+      }
+    }
+  }
+
+  &__wrapper__inner {
+    transform: skewY(17deg);
+  }
+  &__inner {
+    display: flex;
+    align-items: flex-start;
+    flex: 1;
+    gap: 40px;
+    @include mq(md) {
+      flex-direction: column;
+      & > img {
+        width: 100%;
+      }
+    }
+  }
+  &__1col {
+    width: 100%;
+    & img:not(:last-child) {
+      margin-bottom: 30px;
+    }
+  }
+  &__2col {
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    & > img {
+      width: calc(50% - 10px);
+    }
+  }
+}
+/*-------------------------
+フッター
+-------------------------*/
+#works .footer {
+  &__inner {
+    & > a {
+      position: absolute;
+      right: 20px;
+      bottom: 20px;
+      text-transform: uppercase;
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+      & > span {
+        writing-mode: vertical-rl;
+      }
+    }
+  }
+}
