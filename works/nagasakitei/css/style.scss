@@ -1,0 +1,1191 @@
+@use "variables" as *;
+
+/*-------------------------
+全体
+-------------------------*/
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "fot-tsukuaoldmin-pr6n", "Times New Roman", "YuMincho",
+    "Hiragino Mincho ProN", "Yu Mincho", "MS PMincho", serif;
+  font-weight: 300;
+  font-style: normal;
+  @include fz(16);
+  color: $black;
+  line-height: 1;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: top;
+}
+/*-------------------------
+レイアウト
+-------------------------*/
+.container {
+  margin: 0 auto;
+  position: relative;
+  padding: 0 4%;
+  @include mq(lg) {
+    padding: 0 20px;
+  }
+}
+
+.section {
+  height: 100vh;
+  width: 100%;
+}
+
+.main-content-wrapper,
+.news,
+.footer {
+  @include mq(md) {
+    width: calc(100% - 140px);
+  }
+  @include mq(xl) {
+    width: calc(100% - 196px);
+  }
+}
+/*-------------------------
+見出し
+-------------------------*/
+.section__heading {
+  width: 100%;
+  display: grid;
+  &__text {
+    writing-mode: vertical-lr;
+    @include clamp(32, 360, 1920, 56);
+    color: $white;
+    margin: auto;
+    letter-spacing: $letterSpaceSm;
+    border-right: 1px solid white;
+    border-left: 1px solid white;
+    padding: 8px 15px 0;
+    @include mq(lg) {
+      padding: 12px 20px 8px;
+    }
+  }
+  background-size: cover;
+  background-position: center;
+
+  &--about {
+    background-image: url(../img/about_01.jpg);
+  }
+  &--room {
+    background-image: url(../img/room_01.jpg);
+  }
+  &--hotspring {
+    background-image: url(../img/hotspring_01.jpg);
+  }
+  &--meal {
+    background-image: url(../img/meal_01.jpg);
+  }
+  &--spending {
+    background-image: url(../img/spending_01.jpg);
+    background-size: cover;
+  }
+}
+
+.section__desc {
+  background-image: url(../img/bg_paper.png);
+  background-size: cover;
+  margin-top: -5px;
+  margin-bottom: -5px;
+  &__inner {
+    display: grid;
+    place-content: center;
+    row-gap: 30px;
+    height: 100%;
+  }
+
+  &__mv {
+    margin-top: 20px;
+    background-size: cover;
+    background-position: bottom;
+    width: 80%;
+    height: 55vh;
+    position: relative;
+    justify-self: end;
+    &__copy {
+      position: absolute;
+      writing-mode: vertical-lr;
+      color: $white;
+      @include fz(20);
+      background-color: $blackDark;
+      padding: 15px 10px 5px;
+      right: 15px;
+      top: -20px;
+      letter-spacing: $letterSpaceSm;
+      &--second {
+        right: 70px;
+        top: 30px;
+      }
+    }
+    &--about {
+      background-image: url(../img/about_02.jpg);
+    }
+    &--room {
+      background-image: url(../img/room_08.jpg);
+    }
+    &--hotspring {
+      background-image: url(../img/hotspring_04.jpg);
+    }
+    &--meal {
+      background-image: url(../img/meal_07.jpg);
+    }
+    &--spending {
+      background-image: url(../img/spending_05.jpg);
+    }
+  }
+  &__title {
+    display: none;
+  }
+  &__text {
+    @include fz(14);
+    margin-bottom: 20px;
+    line-height: 2;
+    text-align: justify;
+    text-align-last: left;
+  }
+  &__br {
+    display: none;
+  }
+  &__link {
+    &:hover {
+      color: $green;
+      transition: 0.5s;
+      & .section__desc__link__img {
+        filter: invert(38%) sepia(98%) saturate(335%) hue-rotate(34deg)
+          brightness(100%) contrast(93%);
+        transition: filter 0.5s;
+        animation: bounce 2s infinite ease alternate;
+      }
+    }
+    & > a {
+      display: flex;
+      align-items: center;
+    }
+    &__text {
+      line-height: 35px;
+      @include fz(14);
+      text-decoration: underline;
+    }
+    &__img {
+      display: inline-block;
+      width: 25px;
+      height: 25px;
+      margin-left: 10px;
+      background-size: cover;
+      &--about {
+        background: url(../img/about_icon.svg) no-repeat center;
+      }
+      &--room {
+        background: url(../img/room_icon.svg) no-repeat center;
+      }
+      &--hotspring {
+        background: url(../img/hotspring_icon.svg) no-repeat center;
+      }
+      &--meal {
+        background: url(../img/meal_icon.svg) no-repeat center;
+      }
+      &--spending {
+        background: url(../img/spending_icon.svg) no-repeat center;
+      }
+    }
+  }
+  @include mq(lg) {
+    &__inner {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 40px;
+      @include pc--inner;
+      &--reverse {
+        flex-direction: row-reverse;
+      }
+    }
+    &__mv {
+      width: 40%;
+      height: 500px;
+    }
+    &__box {
+      width: 430px;
+    }
+
+    &__title {
+      display: block;
+      margin-bottom: 40px;
+    }
+    &__text {
+      margin-bottom: 60px;
+    }
+    &__br {
+      display: block;
+    }
+
+    &__text,
+    &__link span {
+      @include fz(16);
+    }
+  }
+  @include mq(xl) {
+    padding: 0 20px;
+    gap: 110px;
+    &__inner {
+      justify-content: space-between;
+    }
+    &__mv {
+      width: 450px;
+      height: 650px;
+      &__copy {
+        @include fz(24);
+        padding: 30px 20px 10px;
+        right: 20px;
+        top: -40px;
+        &--second {
+          right: 105px;
+          top: 40px;
+        }
+      }
+    }
+  }
+}
+
+@keyframes bounce {
+  0% {
+    transform: translateY(0);
+  }
+  5% {
+    transform: translateY(0);
+  }
+  10% {
+    transform: translateY(0);
+  }
+  20% {
+    transform: translateY(-3px);
+  }
+  25% {
+    transform: translateY(0);
+  }
+  30% {
+    transform: translateY(-3px);
+  }
+  50% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/*-------------------------
+サイドメニュー
+-------------------------*/
+.side-menu {
+  opacity: 0;
+  transition: opacity 1s;
+  pointer-events: none;
+  display: flex;
+  position: fixed;
+  right: 0;
+  margin-top: -5px;
+  height: calc(100vh + 5px);
+  background-image: url(../img/bg_paper.png);
+  width: 140px;
+  z-index: 9999;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  &.active {
+    opacity: 1;
+    pointer-events: all;
+  }
+  &__logo {
+    margin-top: 20px;
+    width: 40px;
+  }
+  &__list {
+    margin-bottom: 20px;
+  }
+  &__item {
+    text-align: center;
+    & > a {
+      @include fz(18);
+      line-height: 2.5;
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+  }
+  &__plan-access {
+    display: flex;
+    gap: 20px;
+    &__box {
+      & > a {
+        background-color: $black;
+        display: block;
+        writing-mode: vertical-lr;
+        letter-spacing: $letterSpaceSm;
+        color: $white;
+        width: 40px;
+        height: 150px;
+        @include fz(16);
+        line-height: 40px;
+        text-align: center;
+        padding-top: 10px;
+        &:hover {
+          opacity: 0.8;
+        }
+      }
+    }
+  }
+  &__tel {
+    align-self: flex-start;
+    margin-left: 20px;
+    @include fz(18);
+    line-height: 1.2;
+  }
+  @include mq(md) {
+    position: fixed;
+    right: 0;
+    opacity: 1;
+    pointer-events: all;
+  }
+  @include mq(xl) {
+    width: 200px;
+    gap: 30px;
+    &__logo {
+      margin-top: 50px;
+      width: 64px;
+    }
+    &__item > a {
+      @include fz(24);
+    }
+    &__plan-access {
+      gap: 30px;
+      &__box {
+        & > a {
+          @include fz(20);
+          width: 50px;
+          height: 180px;
+          line-height: 50px;
+        }
+      }
+    }
+    &__tel {
+      margin-left: 35px;
+      @include fz(24);
+    }
+  }
+}
+
+/*-------------------------
+SP用ヘッダー
+-------------------------*/
+.header {
+  display: flex;
+  justify-content: space-between;
+  position: fixed;
+  top: 20px;
+  width: 100%;
+  z-index: 9999;
+  &__logo--b {
+    display: none;
+    width: 38px;
+  }
+
+  &__hamburger {
+    width: 30px;
+    position: relative;
+    & > span {
+      cursor: pointer;
+      content: url(../img/sp-menu_line.svg);
+      position: absolute;
+      left: 0;
+      display: inline-block;
+      vertical-align: top;
+      transition: 0.3s ease-in-out;
+      &:nth-child(2) {
+        top: 8px;
+      }
+      &:nth-child(3) {
+        top: 16px;
+      }
+    }
+    &.close {
+      & > span {
+        filter: invert(18%) sepia(0%) saturate(0%) hue-rotate(255deg)
+          brightness(0%) contrast(93%);
+        &:nth-child(1) {
+          transform: rotate(45deg) translate(3px, 8px);
+          transform-origin: center;
+        }
+        &:nth-child(2) {
+          opacity: 0;
+        }
+        &:nth-child(3) {
+          transform: rotate(-45deg) translate(3px, -8px);
+          transform-origin: center;
+        }
+      }
+    }
+  }
+  @include mq(md) {
+    display: none;
+  }
+}
+
+/*-------------------------
+メインビジュアル
+-------------------------*/
+.mv {
+  &__bg {
+    mix-blend-mode: screen;
+    height: 100vh;
+    width: 100%;
+  }
+
+  &__video {
+    position: absolute;
+    opacity: 0.15;
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+  }
+
+  &__img {
+    height: 100vh;
+    width: 100%;
+    & > img {
+      height: 100%;
+      object-fit: cover;
+      object-position: 70%;
+    }
+  }
+
+  &__copy {
+    position: absolute;
+    right: 10%;
+    bottom: 15%;
+    @include mq(md) {
+      right: 8%;
+      bottom: 10%;
+    }
+    &__text {
+      line-height: 1.2;
+      letter-spacing: $letterSpaceLg;
+      writing-mode: vertical-rl;
+      color: $white;
+      text-shadow: $shadow;
+      @include fz(32);
+      & > span {
+        padding-top: 160px;
+        display: block;
+      }
+      @include mq(md) {
+        line-height: 1.5;
+        @include fz(40);
+        & > span {
+          padding-top: 190px;
+        }
+      }
+      @include mq(xl) {
+        line-height: 1.5;
+        @include fz(48);
+        & > span {
+          padding-top: 210px;
+        }
+      }
+    }
+  }
+  &__news {
+    position: absolute;
+    bottom: 40px;
+    left: 4%;
+    &__text {
+      & > a {
+        color: $white;
+        @include fz(10);
+        line-height: 1.8;
+        & span:nth-of-type(1) {
+          position: relative;
+          &::before {
+            content: "";
+            display: block;
+            width: 2px;
+            height: 10px;
+            background-color: $white;
+            position: absolute;
+            top: 3px;
+            right: -5px;
+          }
+        }
+        & span:nth-of-type(2) {
+          @include fz(12);
+          text-decoration: underline;
+        }
+      }
+    }
+    @include mq(md) {
+      &__text {
+        & > a {
+          & span:nth-of-type(1) {
+            &::before {
+              height: 14px;
+              top: 5px;
+              right: -8px;
+            }
+          }
+          @include fz(14);
+          & span:nth-of-type(2) {
+            @include fz(16);
+          }
+        }
+      }
+    }
+  }
+}
+
+/*-------------------------
+お部屋
+-------------------------*/
+.room {
+  background-image: url(../img/bg_black.jpg);
+  &__inner {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 4%;
+    @include mq(lg) {
+      padding: 0;
+    }
+  }
+}
+
+.slick-slider,
+.slick-list,
+.slick-track {
+  margin: 0;
+  padding: 0;
+}
+
+.slick-slide {
+  display: none;
+}
+
+.slick {
+  margin: 0 auto 20px;
+  display: flex;
+  width: 100%;
+  &__img {
+    position: relative;
+    padding-top: 20px;
+    & > img {
+      max-height: 25vh;
+      object-fit: cover;
+      object-position: bottom;
+    }
+    &__text {
+      writing-mode: vertical-lr;
+      letter-spacing: $letterSpaceSm;
+      background-color: $white;
+      padding: 20px 10px 10px;
+      position: absolute;
+      right: 15px;
+      top: 0px;
+      @include fz(16);
+    }
+    &--slick2 {
+      display: none;
+    }
+  }
+  @include mq(lg) {
+    margin-bottom: 30px;
+    &__img {
+      margin: 0 20px;
+      & > img {
+        max-height: none;
+        height: 60vh;
+      }
+      &--slick2 {
+        display: block;
+      }
+      &__text {
+        @include fz(24);
+        padding: 30px 15px 20px;
+        right: 30px;
+      }
+    }
+  }
+  @include mq(xl) {
+    margin-bottom: 40px;
+    &__img {
+      margin: 0 30px;
+      padding-top: 30px;
+    }
+  }
+}
+
+.thumbnail {
+  display: flex;
+  cursor: pointer;
+  margin-left: -8px;
+  margin-right: -8px;
+  &__img {
+    opacity: 0.3;
+    transition: opacity 0.3s linear;
+    margin: 0 8px;
+    &.slick-current {
+      opacity: 1;
+    }
+    &.thumbnail__img--thumbnail2 {
+      display: none;
+    }
+  }
+  & .slick-track {
+    transform: unset !important;
+  }
+
+  @include mq(lg) {
+    margin-left: -10px;
+    margin-right: -10px;
+    justify-content: center;
+    padding: 0 15px;
+    width: 100%;
+    margin: 0;
+    &__img {
+      margin: 0 10px;
+      &.thumbnail__img--thumbnail2 {
+        display: block;
+      }
+    }
+    &2 {
+      display: none;
+    }
+  }
+  @include mq(xl) {
+    padding: 0;
+    @include pc--outer;
+  }
+}
+
+.slick2 {
+  margin-top: 40px;
+  @include mq(lg) {
+    display: none;
+  }
+}
+/*-------------------------
+温泉
+-------------------------*/
+.hotspring {
+  position: relative;
+  background-image: url(../img/bg_black.jpg);
+  &__img-1 {
+    padding-top: 80px;
+    & > img {
+      height: 40vh;
+      object-fit: cover;
+    }
+  }
+  &__img-2 {
+    margin-top: -60px;
+    padding-right: 4%;
+    &__inner {
+      margin-left: auto;
+      aspect-ratio: 1/ 1.64;
+      height: 45vh;
+      & > img {
+        object-fit: cover;
+      }
+    }
+    @include mq(lg) {
+      margin-top: -100px;
+      padding: 0 20px;
+      &__inner {
+        height: 50vh;
+      }
+    }
+    @include mq(xl) {
+      @include pc--outer;
+      margin-top: -150px;
+      &__inner {
+        height: 60vh;
+      }
+    }
+  }
+  &__wave-1,
+  &__wave-2 {
+    height: 182px;
+    left: 0;
+    position: absolute;
+    top: 70%;
+    right: 0;
+    width: 100%;
+    background-repeat: repeat-x;
+  }
+  &__wave-1 {
+    background-image: url(../img/hotspring_wave-1.png);
+    animation: bgScroll 12s linear infinite;
+  }
+  &__wave-2 {
+    background-image: url(../img/hotspring_wave-2.png);
+    animation: bgScroll 20s linear infinite;
+  }
+}
+
+@keyframes bgScroll {
+  from {
+    background-position: 0;
+  }
+  to {
+    background-position: 1300px;
+  }
+}
+/*-------------------------
+お料理
+-------------------------*/
+.meal {
+  background-image: url(../img/bg_black.jpg);
+  height: 100vh;
+  overflow-x: hidden;
+  &__text {
+    color: $white;
+    @include fz(20);
+    margin-bottom: 5px;
+  }
+  &__wrapper {
+    display: flex;
+    width: 2000px;
+    height: 100%;
+  }
+  &__inner {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    &:first-child {
+      animation: loop1 60s -30s linear infinite;
+    }
+    &:last-child {
+      animation: loop2 60s linear infinite;
+    }
+  }
+  &__box {
+    position: absolute;
+    &--1 {
+      top: 15%;
+      left: 35%;
+      width: 30%;
+    }
+    &--2 {
+      top: 25%;
+      left: 5%;
+      width: 20%;
+    }
+    &--3 {
+      top: 55%;
+      left: 30%;
+      width: 30%;
+    }
+    &--4 {
+      top: 20%;
+      right: 3%;
+      width: 20%;
+    }
+    &--5 {
+      top: 48%;
+      right: 5%;
+      width: 30%;
+    }
+  }
+  @include mq(xl) {
+    &__text {
+      @include fz(24);
+      margin-bottom: 10px;
+    }
+    &__wrapper {
+      width: 3100px;
+    }
+    &__box {
+      &--1 {
+        top: 8%;
+        left: 30%;
+        width: 23%;
+      }
+      &--2 {
+        top: 20%;
+        width: 18%;
+        left: 2%;
+        & img {
+          aspect-ratio: 1 / 1.8;
+          object-fit: cover;
+        }
+      }
+      &--3 {
+        top: 55%;
+        width: 28%;
+        left: 27%;
+      }
+      &--4 {
+        top: 8%;
+        width: 22%;
+        right: 10%;
+      }
+      &--5 {
+        top: 45%;
+        width: 25%;
+        right: 15%;
+      }
+    }
+  }
+}
+
+@keyframes loop1 {
+  0% {
+    transform: translateX(100%);
+  }
+
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes loop2 {
+  0% {
+    transform: translateX(0%);
+  }
+
+  to {
+    transform: translateX(-200%);
+  }
+}
+/*-------------------------
+過ごし方
+-------------------------*/
+.spending {
+  background-image: url(../img/bg_black.jpg);
+  &__inner {
+    display: grid;
+    align-content: center;
+    height: 100%;
+  }
+  &__box {
+    position: relative;
+    height: 30vh;
+    width: 70%;
+    opacity: 0;
+    & img {
+      object-fit: cover;
+      height: 100%;
+    }
+    &__text {
+      writing-mode: vertical-lr;
+      letter-spacing: $letterSpaceSm;
+      background-color: $white;
+      padding: 20px 10px 10px;
+      position: absolute;
+      right: 15px;
+      top: -15px;
+      @include fz(16);
+    }
+    &--1,
+    &--3 {
+      margin-left: auto;
+      & img {
+        object-position: bottom;
+      }
+    }
+    &--2 img {
+      object-position: top;
+    }
+    &--2,
+    &--3 {
+      margin-top: -20px;
+    }
+    &--1.active {
+      animation: blurAppear 1.5s forwards;
+    }
+    &--2.active {
+      animation: blurAppear 1.5s 0.5s forwards;
+    }
+    &--3.active {
+      animation: blurAppear 1.5s 1s forwards;
+    }
+  }
+
+  @include mq(lg) {
+    &__inner {
+      display: flex;
+      flex-direction: row-reverse;
+      gap: 40px;
+      align-items: center;
+      @include pc--inner;
+    }
+    &__box {
+      height: 40vh;
+      width: 25%;
+      &__text {
+        @include fz(18);
+      }
+      &--1 {
+        margin-top: -300px;
+        margin-left: 0;
+      }
+      &--3 {
+        margin-top: 300px;
+      }
+    }
+  }
+}
+
+@keyframes blurAppear {
+  from {
+    filter: blur(20px);
+  }
+  to {
+    filter: blur(0);
+    opacity: 1;
+  }
+}
+/*-------------------------
+お知らせ
+-------------------------*/
+.news {
+  background-image: url(../img/bg_paper.png);
+  background-size: cover;
+  margin-top: -5px;
+  margin-bottom: -5px;
+
+  &__pic {
+    width: 100%;
+    & > img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      object-position: top;
+      @include mq(sm) {
+        height: 300px;
+      }
+    }
+  }
+  &__box {
+    margin-top: 40px;
+  }
+  &__heading {
+    margin-top: 40px;
+    margin-bottom: 10px;
+  }
+  &__list--pc {
+    display: none;
+  }
+  &__text {
+    line-height: 1.5;
+    @include fz(14);
+    padding-bottom: 20px;
+    border-bottom: 1px solid $black;
+    padding-top: 20px;
+    & > a:hover {
+      opacity: 0.8;
+    }
+  }
+  @include mq(md) {
+    padding-top: 100px;
+  }
+  @include mq(lg) {
+    &__inner {
+      display: flex;
+      justify-content: center;
+      @include mq(xl) {
+        justify-content: space-between;
+      }
+      gap: 80px;
+      margin: 0 auto;
+      @include pc--inner;
+    }
+    &__pic {
+      width: 40%;
+      height: 500px;
+      @include mq(xl) {
+        width: 450px;
+        height: 600px;
+      }
+      & > img {
+        height: 100%;
+      }
+    }
+    &__box {
+      display: flex;
+      flex-direction: row-reverse;
+      margin: 0;
+    }
+    &__heading {
+      margin-top: 0;
+      margin-left: 40px;
+      width: 64px;
+    }
+    &__list {
+      display: none;
+    }
+    &__list--pc {
+      display: flex;
+      flex-direction: row-reverse;
+    }
+    &__text--pc {
+      height: 60%;
+
+      writing-mode: vertical-rl;
+      border-right: 1px solid $black;
+      padding: 15px 20px;
+      line-height: 1.5;
+      @include mq(xl) {
+        height: 70%;
+        padding: 20px 30px;
+      }
+      &:last-child {
+        border-left: 1px solid black;
+      }
+      & > a:hover {
+        opacity: 0.8;
+      }
+    }
+  }
+}
+/*-------------------------
+フッター
+-------------------------*/
+.footer {
+  background-image: url(../img/footer_sp.jpg);
+  background-size: cover;
+  background-position: 55%;
+  position: relative;
+  z-index: 100;
+  &__contact {
+    margin-bottom: 50px;
+    &__text {
+      color: $white;
+      font-style: normal;
+      line-height: 1.5;
+      & > a::after {
+        content: "";
+        width: 1px;
+        height: 12px;
+        background-color: $white;
+        display: inline-block;
+        margin-left: 8px;
+        margin-right: 16px;
+      }
+    }
+  }
+  &__sns {
+    text-align: right;
+    margin-bottom: 50px;
+    & > a {
+      display: inline-block;
+      margin-left: 15px;
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+    & img {
+      width: 30px;
+      height: 30px;
+    }
+  }
+  &__copy {
+    text-align: center;
+    color: $white;
+    width: 100%;
+    display: block;
+    padding-bottom: 20px;
+    @include fz(12);
+  }
+  &__contact,
+  &__sns {
+    padding: 0 4%;
+  }
+  @include mq(xl) {
+    &__inner {
+      @include pc--outer;
+    }
+    &__contact {
+      margin-bottom: 30px;
+      &__text {
+        @include fz(20);
+        & > a::after {
+          width: 1px;
+          height: 16px;
+          margin-left: 10px;
+          margin-right: 20px;
+        }
+      }
+    }
+    &__sns a {
+      display: inline-block;
+      & img {
+        width: 50px;
+        height: 50px;
+      }
+    }
+    &__copy {
+      @include fz(14);
+    }
+  }
+}
+
+.page-top {
+  text-align: center;
+  padding-top: 20px;
+  padding-bottom: 50px;
+  & > span {
+    display: block;
+    width: 145px;
+    height: 67px;
+    margin: 0 auto;
+    line-height: 67px;
+    background: url(../img/page-top.png) no-repeat;
+    background-size: contain;
+    cursor: pointer;
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+  @include mq(xl) {
+    padding-top: 60px;
+    padding-bottom: 130px;
+
+    & > span {
+      width: 200px;
+      height: 93px;
+      background-size: cover;
+      @include fz(24);
+      line-height: 90px;
+      padding-left: 8px;
+    }
+  }
+}
+
+// スマホ以外で電話のリンクを無効化
+@include mq(sm) {
+  a[href^="tel:"] {
+    pointer-events: none;
+  }
+}
